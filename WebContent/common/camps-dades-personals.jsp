@@ -3,9 +3,10 @@
 <%-- Camps de les dades personals d'un entrivistat--%>
 
 <h2>Dades personals</h2>
-<label>Tractament:</label>
+
+<label for="tractament">Tractament:</label>
 <div class="input-group">
-    <div class="input-group-prepend">
+    <div id="tractament" class="input-group-prepend">
         <div class="input-group-text">
             <input type="radio" name="tractament" value="Senyor">Senyor
         </div>

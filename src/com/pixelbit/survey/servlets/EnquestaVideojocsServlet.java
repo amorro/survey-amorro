@@ -4,6 +4,7 @@ import com.pixelbit.survey.pojo.*;
 import com.pixelbit.survey.service.EmpresaService;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+@WebServlet("/enquesta-videojocs")
 public class EnquestaVideojocsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -43,7 +45,7 @@ public class EnquestaVideojocsServlet extends HttpServlet {
 
         // Configurar llista de preguntes
         Pregunta preg1 = new Pregunta("Quina consola t'agrada més?", respostaPreg1);
-        Pregunta preg2 = new Pregunta("Quin joc t'agrada més?", respostaPreg2);
+        Pregunta preg2 = new Pregunta("Quina consola hauria de millorar més?", respostaPreg2);
 
         HashSet<Pregunta> llistaPreguntes = new HashSet<Pregunta>();
         llistaPreguntes.add(preg1);

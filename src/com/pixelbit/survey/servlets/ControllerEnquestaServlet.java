@@ -44,9 +44,18 @@ public class ControllerEnquestaServlet extends HttpServlet {
 		
 		// Comprovar si s'ha passat correctament el format de codi d'empresa
 		if (sCodiEmpresa !=null && isNumeric(sCodiEmpresa)) {
-			Integer codiEmp = Integer.parseInt(sCodiEmpresa); 
-			
-			String urlNextServlet = (sTipusEnquesta.equals("enq-politica"))?"/enquesta-politica":"/enquesta-formacio";
+			Integer codiEmp = Integer.parseInt(sCodiEmpresa);
+
+			String urlNextServlet = "";
+
+			if (sTipusEnquesta.equals("enq-politica")) {
+				urlNextServlet = "/enquesta-politica";
+			} else if (sTipusEnquesta.equals("enq-formacio")) {
+				urlNextServlet = "/enquesta-formacio";
+			} else {
+				urlNextServlet = "/enquesta-videojocs";
+			}
+
 			
 			// Rediregint la resposta a l'enquesta corresponent afegint el codi d'empresa a la sol·licitud 
 			request.setAttribute("codiEmp", codiEmp);
